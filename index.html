@@ -169,55 +169,143 @@
       <p>Faithful, working demos of the core logic — populated with <b>dummy data only</b>.</p>
     </div>
 
-    <div class="demo-shell">
-      <!-- OEE -->
-      <div class="demo reveal">
-        <div class="demo-head">
-          <div class="dico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10h-2a8 8 0 1 1-8-8z" /><path d="M13 2v9h9a9 9 0 0 0-9-9z" /></svg></div>
-          <div><h3>OEE Calculator</h3><span>Availability × Performance × Quality — live</span></div>
-        </div>
-        <div class="demo-body">
-          <div class="oee-grid">
-            <div class="oee-inputs">
-              <div class="inp"><label>Planned production time (min)</label><input id="pt" type="number" value="480" /></div>
-              <div class="inp"><label>Downtime (min)</label><input id="dt" type="number" value="42" /></div>
-              <div class="inp"><label>Ideal cycle time (sec / unit)</label><input id="ct" type="number" value="6" /></div>
-              <div class="inp"><label>Total count (units)</label><input id="tc" type="number" value="3600" /></div>
-              <div class="inp"><label>Good count (units)</label><input id="gc" type="number" value="3520" /></div>
-            </div>
-            <div class="oee-out">
-              <div class="gauge-card"><div class="gauge"><svg viewBox="0 0 100 100"><circle class="t" cx="50" cy="50" r="40" /><circle class="p" id="gA" cx="50" cy="50" r="40" /></svg><span class="gv">0%</span></div><div class="gl">Availability</div></div>
-              <div class="gauge-card"><div class="gauge"><svg viewBox="0 0 100 100"><circle class="t" cx="50" cy="50" r="40" /><circle class="p" id="gP" cx="50" cy="50" r="40" /></svg><span class="gv">0%</span></div><div class="gl">Performance</div></div>
-              <div class="gauge-card"><div class="gauge"><svg viewBox="0 0 100 100"><circle class="t" cx="50" cy="50" r="40" /><circle class="p" id="gQ" cx="50" cy="50" r="40" /></svg><span class="gv">0%</span></div><div class="gl">Quality</div></div>
-              <div class="oee-total"><div class="gauge" style="width:120px;height:120px;margin:0 auto 6px"><svg viewBox="0 0 100 100"><circle class="t" cx="50" cy="50" r="40" /><circle class="p" id="gO" cx="50" cy="50" r="40" /></svg><span class="gv" style="font-size:20px">0%</span></div><b id="oeeVal">0%</b><span>Overall OEE = A × P × Q</span></div>
-            </div>
+    <div class="demo-tabs reveal">
+      <button class="dt active" data-app="oee">OEE Entry</button>
+      <button class="dt" data-app="qc">OEE QC Entry</button>
+      <button class="dt" data-app="fives-entry">5S Entry</button>
+      <button class="dt" data-app="fives-dash">5S Dashboard</button>
+      <button class="dt" data-app="bulletin">Operation Bulletin</button>
+      <button class="dt" data-app="all">ALEL All Entry</button>
+    </div>
+
+    <div class="appdemo reveal">
+      <div class="app-chrome"><i></i><i></i><i></i><span>ALEL DIGITAL PLATFORM — v2.0</span></div>
+
+      <!-- OEE ENTRY -->
+      <div class="app-panel active" id="app-oee">
+        <div class="app">
+          <div class="top">
+            <div class="brand"><div class="co">ALEL INDUSTRIES LIMITED</div><h1>OEE ENTRY</h1><div class="ref">Daily Overall Equipment Effectiveness — Live Calculation</div></div>
+            <div class="meta"><div><span>Date</span><b>13-Sep-2026</b></div><div><span>Shift</span><b>A</b></div><div><span>Line</span><b>Assembly-2</b></div></div>
           </div>
-          <p class="oee-note">Change any value — the gauges and overall OEE update instantly. Demo data only.</p>
+          <div class="wrap">
+            <h3>Production Entry</h3>
+            <div class="formgrid">
+              <div class="fld"><label>Product / SKU</label><select id="oeeSku"></select></div>
+              <div class="fld"><label>Product Group</label><input id="oeeGroup" readonly value="MCB" /></div>
+              <div class="fld"><label>Rated Capacity (pcs/hr)</label><input id="oeeCap" readonly value="723" /></div>
+              <div class="fld"><label>Ideal Cycle Time (sec/unit)</label><input id="ct" type="number" value="6" /></div>
+              <div class="fld"><label>Planned Production Time (min)</label><input id="pt" type="number" value="480" /></div>
+              <div class="fld"><label>Downtime (min)</label><input id="dt" type="number" value="42" /></div>
+              <div class="fld"><label>Total Count (units)</label><input id="tc" type="number" value="3600" /></div>
+              <div class="fld"><label>Good Count (units)</label><input id="gc" type="number" value="3520" /></div>
+            </div>
+            <h3>Live OEE Result</h3>
+            <div class="kpis">
+              <div class="kpi"><div class="lab">Availability</div><div class="val" id="kA">0%</div><div class="sub">Run / Planned</div></div>
+              <div class="kpi hc"><div class="lab">Performance</div><div class="val" id="kP">0%</div><div class="sub">Ideal / Actual</div></div>
+              <div class="kpi smv"><div class="lab">Quality</div><div class="val" id="kQ">0%</div><div class="sub">Good / Total</div></div>
+              <div class="kpi oee"><div class="lab">OEE</div><div class="val" id="oeeVal">0%</div><div class="sub">A × P × Q</div></div>
+            </div>
+            <p class="note">Demo entry form — dummy values. Selecting an SKU auto-fills group &amp; capacity.</p>
+            <button class="btn2" type="button">Submit Entry</button>
+          </div>
         </div>
       </div>
 
-      <!-- Bulletin -->
-      <div class="demo reveal">
-        <div class="demo-head">
-          <div class="dico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 0 4.9 14.3l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z" /></svg></div>
-          <div><h3>Operation Bulletin — Search</h3><span>Search dummy SKUs by name, item code or group</span></div>
-        </div>
-        <div class="demo-body">
-          <div class="bul-search">
-            <input id="bulSearch" placeholder="Search dummy SKU or item code (e.g. DEMO-1001)…" />
-            <span class="badge-demo">Demo data</span>
+      <!-- OEE QC ENTRY -->
+      <div class="app-panel" id="app-qc">
+        <div class="app">
+          <div class="top">
+            <div class="brand"><div class="co">ALEL INDUSTRIES LIMITED</div><h1>OEE QC ENTRY</h1><div class="ref">QC Review — Operator Rejects vs Sampled QC Checks</div></div>
+            <div class="meta"><div><span>Date</span><b>13-Sep-2026</b></div><div><span>Shift</span><b>A</b></div><div><span>Line</span><b>Assembly-2</b></div></div>
           </div>
-          <div class="bul-list" id="bulList"></div>
+          <div class="wrap">
+            <h3>QC Review Sheet</h3>
+            <table>
+              <thead><tr><th>SL</th><th>Product / SKU</th><th>Operator Reject</th><th>Sampled QC</th><th>Variance</th><th>Status</th></tr></thead>
+              <tbody id="qcBody"></tbody>
+            </table>
+            <h3>Summary</h3>
+            <div class="kpis">
+              <div class="kpi smv"><div class="lab">First Pass Yield</div><div class="val">98.1%</div><div class="sub">Target ≥ 98%</div></div>
+              <div class="kpi"><div class="lab">Total Rejects</div><div class="val">80</div><div class="sub">pcs</div></div>
+              <div class="kpi prod"><div class="lab">Mismatches</div><div class="val">2</div><div class="sub">RCA raised</div></div>
+              <div class="kpi hc"><div class="lab">Reviewed</div><div class="val">6</div><div class="sub">entries</div></div>
+            </div>
+            <p class="note">Dummy data. Rows flagged MISMATCH trigger an RCA.</p>
+          </div>
         </div>
       </div>
 
-      <!-- 5S -->
-      <div class="demo reveal">
-        <div class="demo-head">
-          <div class="dico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" /></svg></div>
-          <div><h3>5S Scoreboard</h3><span>Category scores with animated bars</span></div>
+      <!-- 5S ENTRY -->
+      <div class="app-panel" id="app-fives-entry">
+        <div class="app">
+          <div class="top">
+            <div class="brand"><div class="co">ALEL INDUSTRIES LIMITED</div><h1>5S AUDIT ENTRY</h1><div class="ref">Workplace Organization Audit — by Floor / Area</div></div>
+            <div class="meta"><div><span>Date</span><b>13-Sep-2026</b></div><div><span>Floor</span><b>LED Assembly</b></div><div><span>Auditor</span><b>OPEX</b></div></div>
+          </div>
+          <div class="wrap">
+            <h3>Audit Scoring</h3>
+            <div class="fivecat" id="fiveEntry"></div>
+            <h3>Photo Evidence</h3>
+            <div class="photo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 3 7.2 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9zm3 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" /></svg>
+              <div>Click to upload shop-floor photo</div>
+              <div class="note">Picture placeholder — demo only</div>
+            </div>
+            <p class="note">Overall 5S score updates as you move the sliders. Dummy data.</p>
+            <button class="btn2" type="button">Save Audit</button>
+          </div>
         </div>
-        <div class="demo-body"><div class="five-s" id="fiveS"></div></div>
+      </div>
+
+      <!-- 5S DASHBOARD -->
+      <div class="app-panel" id="app-fives-dash">
+        <div class="app">
+          <div class="top">
+            <div class="brand"><div class="co">ALEL INDUSTRIES LIMITED</div><h1>5S DASHBOARD</h1><div class="ref">Historical Trend &amp; Sustainment Tracking</div></div>
+            <div class="meta"><div><span>Period</span><b>Last 6 months</b></div><div><span>Floors</span><b>6</b></div></div>
+          </div>
+          <div class="wrap">
+            <h3>Monthly 5S Trend</h3>
+            <div class="trend" id="fiveTrend"></div>
+            <h3>Score by Floor</h3>
+            <div class="heat" id="fiveHeat"></div>
+            <h3>Category Breakdown</h3>
+            <div class="kpis" id="fiveCats"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPERATION BULLETIN -->
+      <div class="app-panel" id="app-bulletin">
+        <div class="app">
+          <div class="top">
+            <div class="brand"><div class="co">ALEL INDUSTRIES LIMITED</div><h1>OPERATION BULLETIN</h1><div class="ref">Work Study &amp; Capacity Standard — Standard Minute Value (SMV)</div></div>
+            <div class="meta"><div><span>Bulletins</span><b>136</b></div><div><span>Product groups</span><b>19</b></div></div>
+          </div>
+          <div class="wrap">
+            <div class="searchbar"><input id="bulSearch" placeholder="Search by SKU name or item code (e.g. DEMO-1001)…" /></div>
+            <div class="chips" id="bulChips"></div>
+            <div id="bulList"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALL ENTRY -->
+      <div class="app-panel" id="app-all">
+        <div class="app">
+          <div class="top">
+            <div class="brand"><div class="co">ALEL INDUSTRIES LIMITED</div><h1>ALEL ALL ENTRY</h1><div class="ref">One hub for every shop-floor data-entry module</div></div>
+            <div class="meta"><div><span>Modules</span><b>6</b></div><div><span>Status</span><b>Live</b></div></div>
+          </div>
+          <div class="wrap">
+            <h3>Entry Modules</h3>
+            <div class="hub" id="appHub"></div>
+            <p class="note">Click a module to open its demo. All data is dummy.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
