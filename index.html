@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md. Maruf Hossain — All Projects | Operational Excellence Systems</title>
+  <meta name="description" content="Project showcase of Md. Maruf Hossain: ALEL Pulse, OEE Entry, 5S Entry & Dashboard, Operation Bulletin and production-process automation systems. Interactive demos use dummy data." />
+  <meta name="author" content="Md. Maruf Hossain" />
+  <meta name="theme-color" content="#05070f" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Md. Maruf Hossain — All Projects" />
+  <meta property="og:description" content="Operational excellence & production-process automation systems — interactive showcase." />
+  <meta property="og:image" content="profile.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <noscript><style>#preloader{display:none!important}body.locked{overflow:auto;height:auto}.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+
+<body class="locked">
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <defs>
+      <linearGradient id="gGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1" /><stop offset="100%" stop-color="#22d3ee" /></linearGradient>
+    </defs>
+  </svg>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="pre-grid-bg" id="preGrid"></div>
+    <span class="pre-orb o1"></span><span class="pre-orb o2"></span>
+    <div class="pre-inner">
+      <div class="pre-logo">
+        <span class="sq s1"></span><span class="sq s2"></span><span class="core">MMH</span>
+      </div>
+      <div class="pre-count"><span id="preCount">0</span>%</div>
+      <div class="pre-word"><span class="w" id="preWord">PROJECTS</span></div>
+      <div class="pre-status" id="preStatus">Initializing</div>
+      <div class="pre-bar"><i id="preBar"></i></div>
+    </div>
+    <div class="pre-curtain"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a class="logo" href="#top"><span class="mark">MMH</span><span>All Projects<small>OPERATIONAL EXCELLENCE</small></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#top">Overview</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#demos">Live Demos</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="https://marufhossain2707.github.io/" target="_blank" rel="noopener">Portfolio ↗</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <canvas id="particles"></canvas>
+    <div class="aurora"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+    <div class="hero-inner">
+      <div class="hero-badge"><span class="pulse-dot"></span> Md. Maruf Hossain · Operational Excellence &amp; Production-Process Automation</div>
+      <h1>All <span class="grad">Projects</span></h1>
+      <p class="lead">
+        The digital systems I designed and deployed on the shop floor — from live OEE and 5S
+        to a searchable Operation Bulletin — turning manual, paper-based tracking into real-time
+        operational visibility. Explore the interactive demos below (dummy data).
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>7</b><span>DIGITAL SYSTEMS</span></div>
+        <div class="hero-stat"><b>19</b><span>PRODUCT GROUPS</span></div>
+        <div class="hero-stat"><b>100%</b><span>PAPERLESS TRACKING</span></div>
+        <div class="hero-stat"><b>Real-time</b><span>VISIBILITY</span></div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">Explore projects</a>
+        <a class="btn btn-ghost" href="#demos">Try the demos</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-head reveal">
+      <div class="eyebrow">Portfolio</div>
+      <h2>The <span class="grad">systems</span> I built</h2>
+      <p>Each card opens a summary of what the system does. All data shown anywhere on this site is dummy/demo data.</p>
+    </div>
+
+    <div class="filters reveal">
+      <button class="filter active" data-cat="all">All</button>
+      <button class="filter" data-cat="oee">OEE</button>
+      <button class="filter" data-cat="5s">5S</button>
+      <button class="filter" data-cat="dashboard">Dashboards</button>
+      <button class="filter" data-cat="planning">Planning</button>
+      <button class="filter" data-cat="quality">Quality</button>
+    </div>
+
+    <div class="proj-grid">
+      <article class="proj reveal" data-cat="dashboard oee">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h4v8H3zm7-6h4v14h-4zm7 3h4v11h-4z" /></svg></div>
+        <h3>ALEL Pulse</h3>
+        <p>Real-time production pulse: output vs target, OEE, downtime and alerts in one live view for the floor and management.</p>
+        <div class="tags"><span class="tag">Real-time</span><span class="tag">OEE</span><span class="tag">Alerts</span></div>
+        <button class="open" data-project="alel-pulse">View details <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z" /></svg></button>
+      </article>
+
+      <article class="proj reveal" data-cat="oee" data-delay="60">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v3H4zm0 5h16v3H4zm0 5h10v3H4z" /><path d="M17 15l3 3-3 3z" /></svg></div>
+        <h3>OEE Entry</h3>
+        <p>Digital OEE data-entry with SKU / capacity / cycle-time auto-lookup and real-time OEE calculation — replacing paper tallies.</p>
+        <div class="tags"><span class="tag">Paperless</span><span class="tag">Auto-lookup</span><span class="tag">Live OEE</span></div>
+        <button class="open" data-project="oee-entry">View details <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z" /></svg></button>
+      </article>
+
+      <article class="proj reveal" data-cat="5s" data-delay="120">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" /></svg></div>
+        <h3>5S Entry</h3>
+        <p>Guided 5S audit form capturing consistent scores across sort, set-in-order, shine, standardize and sustain.</p>
+        <div class="tags"><span class="tag">Audit</span><span class="tag">By floor</span><span class="tag">Rubric</span></div>
+        <button class="open" data-project="fives-entry">View details <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z" /></svg></button>
+      </article>
+
+      <article class="proj reveal" data-cat="5s dashboard" data-delay="180">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3zm2 10h3v6H5zm5-5h3v11h-3zm5 3h3v8h-3z" /></svg></div>
+        <h3>5S Dashboard</h3>
+        <p>Historical 5S trends by floor with category-wise weak-spot analysis so sustainment becomes measurable.</p>
+        <div class="tags"><span class="tag">Trends</span><span class="tag">Heat-map</span><span class="tag">Live</span></div>
+        <button class="open" data-project="fives-dashboard">View details <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z" /></svg></button>
+      </article>
+
+      <article class="proj reveal" data-cat="planning" data-delay="240">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v2H4zm0 5h16v2H4zm0 5h10v2H4zm0 5h16v2H4z" /></svg></div>
+        <h3>Operation Bulletin</h3>
+        <p>Searchable SKU / item-code work-study bulletin: operations, machine, SMV and manpower standards at a glance.</p>
+        <div class="tags"><span class="tag">SMV</span><span class="tag">Work study</span><span class="tag">Searchable</span></div>
+        <button class="open" data-project="operation-bulletin">View details <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z" /></svg></button>
+      </article>
+
+      <article class="proj reveal" data-cat="quality" data-delay="300">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6zm-1 13-3-3 1.4-1.4L11 12.2l4.6-4.6L17 9l-6 6z" /></svg></div>
+        <h3>QC Review Workflow</h3>
+        <p>Reconciles operator-reported rejects with sampled QC checks, flagging mismatches for RCA and tracking first-pass yield.</p>
+        <div class="tags"><span class="tag">QC</span><span class="tag">FPY</span><span class="tag">RCA</span></div>
+        <button class="open" data-project="qc-review">View details <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z" /></svg></button>
+      </article>
+
+      <article class="proj reveal" data-cat="dashboard" data-delay="360">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3zm10 0h8v5h-8zM3 13h8v8H3zm10-3h8v11h-8z" /></svg></div>
+        <h3>Manufacturing Gap Assessment</h3>
+        <p>Multi-plant manufacturing-system gap assessment dashboards visualising maturity gaps and corrective-action priorities.</p>
+        <div class="tags"><span class="tag">Multi-plant</span><span class="tag">Maturity</span><span class="tag">Actions</span></div>
+        <button class="open" data-project="gap-dashboard">View details <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h12l-5-5 1.4-1.4L21 12l-7.6 6.4L12 17l5-5H5z" /></svg></button>
+      </article>
+    </div>
+  </section>
+
+  <!-- DEMOS -->
+  <section class="section" id="demos">
+    <div class="section-head reveal">
+      <div class="eyebrow">Interactive</div>
+      <h2>Try the <span class="grad">demos</span></h2>
+      <p>Faithful, working demos of the core logic — populated with <b>dummy data only</b>.</p>
+    </div>
+
+    <div class="demo-shell">
+      <!-- OEE -->
+      <div class="demo reveal">
+        <div class="demo-head">
+          <div class="dico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10h-2a8 8 0 1 1-8-8z" /><path d="M13 2v9h9a9 9 0 0 0-9-9z" /></svg></div>
+          <div><h3>OEE Calculator</h3><span>Availability × Performance × Quality — live</span></div>
+        </div>
+        <div class="demo-body">
+          <div class="oee-grid">
+            <div class="oee-inputs">
+              <div class="inp"><label>Planned production time (min)</label><input id="pt" type="number" value="480" /></div>
+              <div class="inp"><label>Downtime (min)</label><input id="dt" type="number" value="42" /></div>
+              <div class="inp"><label>Ideal cycle time (sec / unit)</label><input id="ct" type="number" value="6" /></div>
+              <div class="inp"><label>Total count (units)</label><input id="tc" type="number" value="3600" /></div>
+              <div class="inp"><label>Good count (units)</label><input id="gc" type="number" value="3520" /></div>
+            </div>
+            <div class="oee-out">
+              <div class="gauge-card"><div class="gauge"><svg viewBox="0 0 100 100"><circle class="t" cx="50" cy="50" r="40" /><circle class="p" id="gA" cx="50" cy="50" r="40" /></svg><span class="gv">0%</span></div><div class="gl">Availability</div></div>
+              <div class="gauge-card"><div class="gauge"><svg viewBox="0 0 100 100"><circle class="t" cx="50" cy="50" r="40" /><circle class="p" id="gP" cx="50" cy="50" r="40" /></svg><span class="gv">0%</span></div><div class="gl">Performance</div></div>
+              <div class="gauge-card"><div class="gauge"><svg viewBox="0 0 100 100"><circle class="t" cx="50" cy="50" r="40" /><circle class="p" id="gQ" cx="50" cy="50" r="40" /></svg><span class="gv">0%</span></div><div class="gl">Quality</div></div>
+              <div class="oee-total"><div class="gauge" style="width:120px;height:120px;margin:0 auto 6px"><svg viewBox="0 0 100 100"><circle class="t" cx="50" cy="50" r="40" /><circle class="p" id="gO" cx="50" cy="50" r="40" /></svg><span class="gv" style="font-size:20px">0%</span></div><b id="oeeVal">0%</b><span>Overall OEE = A × P × Q</span></div>
+            </div>
+          </div>
+          <p class="oee-note">Change any value — the gauges and overall OEE update instantly. Demo data only.</p>
+        </div>
+      </div>
+
+      <!-- Bulletin -->
+      <div class="demo reveal">
+        <div class="demo-head">
+          <div class="dico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 2a8 8 0 1 0 4.9 14.3l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z" /></svg></div>
+          <div><h3>Operation Bulletin — Search</h3><span>Search dummy SKUs by name, item code or group</span></div>
+        </div>
+        <div class="demo-body">
+          <div class="bul-search">
+            <input id="bulSearch" placeholder="Search dummy SKU or item code (e.g. DEMO-1001)…" />
+            <span class="badge-demo">Demo data</span>
+          </div>
+          <div class="bul-list" id="bulList"></div>
+        </div>
+      </div>
+
+      <!-- 5S -->
+      <div class="demo reveal">
+        <div class="demo-head">
+          <div class="dico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" /></svg></div>
+          <div><h3>5S Scoreboard</h3><span>Category scores with animated bars</span></div>
+        </div>
+        <div class="demo-body"><div class="five-s" id="fiveS"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="section" id="architecture">
+    <div class="section-head reveal">
+      <div class="eyebrow">How it works</div>
+      <h2>Architecture &amp; <span class="grad">stack</span></h2>
+      <p>A lightweight, low-cost stack that runs on the tools the plant already has.</p>
+    </div>
+    <div class="arch">
+      <div class="layer reveal"><div class="n">01 · CAPTURE</div><h4>Shop-floor entry</h4><p>Operators enter OEE, QC and 5S data through simple web forms on any device.</p></div>
+      <div class="layer reveal" data-delay="80"><div class="n">02 · STORE</div><h4>Central database</h4><p>Google Sheets acts as the structured database with history and validation.</p></div>
+      <div class="layer reveal" data-delay="160"><div class="n">03 · AUTOMATE</div><h4>Logic layer</h4><p>Google Apps Script handles lookups, calculations, workflow and alerts.</p></div>
+      <div class="layer reveal" data-delay="240"><div class="n">04 · REPORT</div><h4>Dashboards</h4><p>Real-time dashboards and MIS views for the floor and management.</p></div>
+    </div>
+  </section>
+
+  <!-- NOTICE -->
+  <section class="section" style="padding-top:0">
+    <div class="notice reveal">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 21h22L12 2zm1 15h-2v-2h2v2zm0-4h-2V9h2v4z" /></svg>
+      <p><b>Demo data notice:</b> every number, SKU and score on this page is <b>dummy/demo data</b>. No real company or production data, and no source code, is published. The systems are shown as highlights only.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year">2026</span> Md. Maruf Hossain — All Projects · Operational Excellence &amp; Production-Process Automation</p>
+    <div class="flinks">
+      <a href="https://marufhossain2707.github.io/" target="_blank" rel="noopener">Portfolio</a>
+      <a href="https://www.linkedin.com/in/md-maruf-hossain-7a564a196" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:marufhossain2707@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-8 8h5v8h6v-8h5z" /></svg></button>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div><h3 id="modalTitle"></h3><span id="modalSub" style="font-size:12.5px;color:var(--muted)"></span></div>
+        <button class="close" id="modalClose" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
