@@ -406,14 +406,31 @@
   }
 
   /* ---------------- Demo tabs + module hub ---------------- */
-  const dts = $$(".dt");
-  dts.forEach((dt) => dt.addEventListener("click", () => {
-    dts.forEach((x) => x.classList.remove("active"));
+  function activateApp(name, scroll) {
+    const dt = $(`.dt[data-app="${name}"]`);
+    if (!dt) return false;
+    $$(".dt").forEach((x) => x.classList.remove("active"));
     dt.classList.add("active");
     $$(".app-panel").forEach((p) => p.classList.remove("active"));
-    const panel = $("#app-" + dt.dataset.app);
+    const panel = $("#app-" + name);
     if (panel) panel.classList.add("active");
+    if (scroll) {
+      const d = $("#demos");
+      if (d) d.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    }
+    return true;
+  }
+  const dts = $$(".dt");
+  dts.forEach((dt) => dt.addEventListener("click", () => {
+    activateApp(dt.dataset.app, false);
+    try { history.replaceState(null, "", "#" + dt.dataset.app); } catch (e) { /* noop */ }
   }));
+  const initialApp = (location.hash || "").replace("#", "");
+  if (initialApp) setTimeout(() => activateApp(initialApp, true), 350);
+  window.addEventListener("hashchange", () => {
+    const h = (location.hash || "").replace("#", "");
+    if (h) activateApp(h, true);
+  });
   const appHub = $("#appHub");
   if (appHub) {
     const mods = [
